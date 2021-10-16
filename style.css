@@ -1,0 +1,128 @@
+/* YEK (https://github.com/yek-org)
+-------------------------------------- */
+/* variables
+---------------------------- */
+/* 3D-BOX ($bx-)
+------------------------- */
+/* resets
+---------------------------- */
+body {
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  background-color: #888; }
+
+a {
+  color: #69c;
+  text-decoration: none;
+  cursor: pointer; }
+
+/* stylesheets
+---------------------------- */
+.yek-social {
+  width: 750px;
+  height: 190px;
+  /* animaitons
+	------------------------- */ }
+  .yek-social__list, .yek-social__item, .yek-social__link, .yek-social__button {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center; }
+  .yek-social__list, .yek-social__link {
+    width: 100%;
+    height: 100%; }
+  .yek-social__list {
+    justify-content: space-between;
+    border-radius: 9px;
+    padding: 9px; }
+  .yek-social__item {
+    width: 24%;
+    height: 100%;
+    border-radius: 9px;
+    background-color: #888; }
+  .yek-social__button {
+    width: 72px;
+    height: 72px;
+    background-color: #fff;
+    box-shadow: -20px 20px 5px rgba(68, 68, 68, 0.5);
+    transition: 0.5s 0.15s; }
+  .yek-social__button {
+    position: relative;
+    transform: perspective(1000px) rotate(0deg) skew(0deg); }
+    .yek-social__button::before, .yek-social__button::after {
+      content: "";
+      position: absolute; }
+    .yek-social__button::before {
+      width: 21px;
+      height: 100%;
+      top: 10px;
+      left: -20px;
+      background-color: #9f9f9f;
+      transition: 0.5s 0.15s;
+      transform: rotate(0deg) skewY(-45deg); }
+    .yek-social__button::after {
+      width: 100%;
+      height: 21px;
+      bottom: -20px;
+      left: -10px;
+      transition: 0.8s 0.15s;
+      background-color: #c3c3c3;
+      transform: rotate(0deg) skewX(-45deg); }
+  .yek-social__icon {
+    color: #444;
+    font-size: 1.7em;
+    transition-delay: 0.2s; }
+  .yek-social__link:hover .yek-social__icon {
+    color: #fff; }
+  .yek-social__link:hover .yek-social__button {
+    transform: perspective(1000px) rotate(0deg) skew(0deg) translate(20px, -20px); }
+    .yek-social__link:hover .yek-social__button--youtube {
+      background-color: #c4302b;
+      box-shadow: -50px 50px 20px rgba(196, 48, 43, 0.5); }
+      .yek-social__link:hover .yek-social__button--youtube::before {
+        background-color: #d5433e; }
+      .yek-social__link:hover .yek-social__button--youtube::after {
+        background-color: #db5f5b; }
+    .yek-social__link:hover .yek-social__button--twitter {
+      background-color: #00acee;
+      box-shadow: -50px 50px 20px rgba(0, 172, 238, 0.5); }
+      .yek-social__link:hover .yek-social__button--twitter::before {
+        background-color: #13bdff; }
+      .yek-social__link:hover .yek-social__button--twitter::after {
+        background-color: #36c7ff; }
+    .yek-social__link:hover .yek-social__button--telegram {
+      background-color: #0088cc;
+      box-shadow: -50px 50px 20px rgba(0, 136, 204, 0.5); }
+      .yek-social__link:hover .yek-social__button--telegram::before {
+        background-color: #00a0f0; }
+      .yek-social__link:hover .yek-social__button--telegram::after {
+        background-color: #14b1ff; }
+    .yek-social__link:hover .yek-social__button--instagram {
+      background-color: #c13584;
+      box-shadow: -50px 50px 20px rgba(193, 53, 132, 0.5); }
+      .yek-social__link:hover .yek-social__button--instagram::before {
+        background-color: #ce4c95; }
+      .yek-social__link:hover .yek-social__button--instagram::after {
+        background-color: #d668a6; }
+
+.follow-me {
+  display: inline-block;
+  position: fixed;
+  bottom: 14px;
+  left: 14px;
+  padding: 9px;
+  border-radius: 9px;
+  font-family: "ubuntu";
+  background-color: #fff; }
+  .follow-me .link {
+    transition: 0.3s 0.2s linear;
+    border-radius: 4px;
+    padding: 4px; }
+    .follow-me .link:hover {
+      margin: 4px;
+      color: #fff;
+      background-color: #69c; }
+  .follow-me .mute {
+    color: black; }
