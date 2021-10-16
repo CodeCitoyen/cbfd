@@ -1,0 +1,25 @@
+{
+  "name": "clickbaitpourlademocratie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass scss/main.scss style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeCitoyen/cbfd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodeCitoyen/cbfd/issues"
+  },
+  "homepage": "https://github.com/CodeCitoyen/cbfd#readme",
+  "dependencies": {
+    "node-sass": "^6.0.1"
+  },
+  "devDependencies": {
+  }
+}
