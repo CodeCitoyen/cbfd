@@ -8,3 +8,14 @@ npm run sass
 ```
 
 
+Compile compile common html
+
+```
+npm run build
+```
+
+
+
+Todo : 
+
+fix compilation of images & use webpack to compile scss to css

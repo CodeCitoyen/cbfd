@@ -1,0 +1,64 @@
+
+
+<!--     PAGE 1 -->
+<section class="md:h-screen" style="background-color: #5ce1e6">
+
+    <!--        bandeau-->
+    <div class="bandeau">
+        <img src="assets/bandeau.png" class="marquee" alt="bandeau">
+    </div>
+    <div class="grid grid-cols-6 md:grid-cols-12 md:h-96 mt-10 md:mt-52 mx-auto max-w-screen-xl">
+        <div class="col-span-6 md:col-span-5 text-center justify-center flex align-center flex-col text-2xl py-28 px-6">
+            <p class="mb-5">Oups, on dirait que vous ne vous attendiez pas à arriver ici.</p>
+            <p>Pourquoi ne pas prendre 2 min pour vérifier que vous êtes bien inscrit·e sur les listes électorales ?</p>
+        </div>
+        <div class="hidden md:col-span-2 md:flex">
+            <img style="transform: scale(1, -1) rotate(17deg); width: 100%; object-fit: contain; padding: 6px 10px 80px 10px;" src="assets/arrow.png" alt="flèche">
+        </div>
+        <div class="col-span-6 md:col-span-5 flex flex-col justify-evenly">
+            <div>
+                <a class="yek-social__link"
+                   target="_blank"
+                   href="https://service-public.fr/particuliers/vosdroits/services-en-ligne-et-formulaires/ISE">
+                    <span class="yek-social__button yek-social__button--button_1 button_1">
+                        Vérifier que je suis inscrit·e sur les listes électorales
+                    </span>
+                </a>
+            </div>
+            <div class="flex justify-end items-center" style="padding: 50px 130px 50px 0;">
+                <p class="text-xl">mal-inscrit·e ?</p>
+                <img style="object-fit: contain; width: 150px; height: 130px;" src="assets/arrow_down.png" alt="flèche">
+            </div>
+            <div>
+                <a class="yek-social__link"
+                   target="_blank"
+                   href="https://www.inscriptionelectorale.service-public.fr">
+                    <span class="yek-social__button yek-social__button--button_2 button_2">
+                        M'inscrire sur les listes électorales
+                    </span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="text-center h-80 flex flex-col justify-center">
+        <h1 id="timeout" class="text-5xl"></h1>
+        <p id="timeout-desc" class="italic mt-2"></p>
+    </div>
+
+
+</section>
+
+<!-- PAGE 2 -->
+<section class="h-screen">
+    <h2></h2>
+    <div>
+        <div></div>
+        <div></div>
+    </div>
+
+</section>
+
+
+<script src="script.js"></script>
