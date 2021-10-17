@@ -93,6 +93,30 @@
       .yek-social__link:hover .yek-social__button--button_2::after {
         background-color: #36c7ff; }
 
+#bandeau {
+  position: relative; }
+
+.marquee {
+  overflow: hidden;
+  -webkit-animation: marquee 50s linear infinite;
+  animation: marquee 4s linear infinite; }
+
+/* @-webkit-keyframes marquee {
+    from {
+      left: 0
+    }
+    to {
+      left: 100%
+    }
+}
+   */
+/* 29 images sur 3500 pixels */
+@keyframes marquee {
+  from {
+    left: -1448px; }
+  to {
+    left: -10px; } }
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Raleway', sans-serif; }
 

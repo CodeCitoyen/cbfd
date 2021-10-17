@@ -1,0 +1,32 @@
+#bandeau {
+    position: relative;
+}
+
+  
+.marquee {
+    overflow: hidden;
+    -webkit-animation: marquee 50s linear infinite;
+    animation: marquee 4s linear infinite;
+}
+  
+/* @-webkit-keyframes marquee {
+    from {
+      left: 0
+    }
+    to {
+      left: 100%
+    }
+}
+   */
+
+/* 29 images sur 3500 pixels */
+@keyframes marquee {
+    from {
+        left: -1448px
+        // left: -50px
+    }
+    to {
+        left: -10px
+        // left: 500px
+    }
+}
