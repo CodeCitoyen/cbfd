@@ -133,6 +133,7 @@ $bx-transform-target--hover: $bx-transform--target translate(5px, -5px);
   &__button {
     text-align: center;
     font-size: 22px;
+    max-width: 80%;
     &.button_1 {
       @include yek-size(450px, 100%);
       background-color: $bx-bg-color-1;

@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "node-sass scss/main.scss dist/assets/style.css",
+    "sass": "node-sass scss/main.scss docs/assets/style.css",
     "build": "webpack",
     "build-prod": "webpack --no-watch",
     "serve": "http-server"
