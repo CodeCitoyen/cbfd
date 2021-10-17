@@ -1,32 +1,20 @@
-#bandeau {
-    position: relative;
-}
 
-  
-.marquee {
+.bandeau {
     overflow: hidden;
-    -webkit-animation: marquee 50s linear infinite;
-    animation: marquee 4s linear infinite;
-}
-  
-/* @-webkit-keyframes marquee {
-    from {
-      left: 0
-    }
-    to {
-      left: 100%
+    .marquee {
+        width: 200%;
+        max-width: 200%;
+        -webkit-animation: marquee 3s linear infinite;
+        animation: marquee 3s linear infinite;
     }
 }
-   */
 
 /* 29 images sur 3500 pixels */
 @keyframes marquee {
     from {
-        left: -1448px
-        // left: -50px
+        transform: translateX(-10.288%)
     }
     to {
-        left: -10px
-        // left: 500px
+        transform: translateX(0)
     }
 }
