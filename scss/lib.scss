@@ -1,0 +1,233 @@
+/* YEK (https://github.com/yek-org)
+-------------------------------------- */
+
+@mixin yek-align($ver: null, $hor: null, $content: null) {
+  @if $hor == null and $ver == null {
+    align-items: center;
+    justify-content: center;
+  }
+  @if $hor not null {
+  align-items: $hor; // hor
+}
+  @if $ver not null {
+             justify-content: $ver; // ver
+           }
+  @if $content not null {
+                 align-content: $content;
+               }
+}
+
+@mixin yek-aligns($align: center) {
+  @include yek-align($align, $align, $align);
+}
+
+@mixin yek-size($w: null, $h: null) {
+  @if $w == null and $h == null {
+    width: 100%;
+    height: 100%;
+  }
+  @if $w not null {
+  width: $w;
+}
+  @if $h not null {
+           height: $h;
+         }
+}
+@mixin yek-flex($dir: column, $wrap: wrap) {
+  display: flex;
+  flex-direction: $dir;
+  flex-wrap: $wrap;
+}
+
+$yek-light: #fff;
+$yek-gray--100: #f9f9f9;
+$yek-gray--400: #f4f4f4;
+$yek-gray--800: #444;
+$yek-blue--600: #69c;
+@function _yek-btn--size($s: "md") {
+  $_s: map-get(
+                  (
+                          small: 42px,
+                          sm: 42px,
+                          medium: 60px,
+                          md: 60px,
+                          larg: 72px,
+                          lg: 72px,
+                          custom: 200px
+                  ),
+                  $s
+  );
+  @return $_s;
+}
+
+/* variables
+---------------------------- */
+$COLOR_YOUTUBE: #c4302b;
+$COLOR_TWITTER: #00acee;
+$COLOR_TELEGRAM: #0088cc;
+$COLOR_INSTAGRAM: #c13584;
+
+// color
+$body-bg: #888;
+
+/* 3D-BOX ($bx-)
+------------------------- */
+$bx-bg-color-1: red;
+$bx-bg-color-2: blue;
+$bx-shadow: -20px 20px 5px rgba($yek-gray--800, 0.5);
+$bx-skew--before: skewY(-45deg);
+$bx-skew--after: skewX(-45deg);
+$bx-rotate--side: rotate(0deg);
+$bx-skew--target: skew(0deg);
+$bx-rotate--target: rotate(0deg);
+$bx-transform--before: $bx-rotate--side $bx-skew--before;
+$bx-transform--after: $bx-rotate--side $bx-skew--after;
+$bx-transform--target: perspective(1000px) $bx-rotate--target $bx-skew--target;
+$bx-transform-target--hover: $bx-transform--target translate(5px, -5px);
+
+// MIXIN
+@mixin yek-button($s: "md", $t: 144px) { //144
+  $_size: _yek-btn--size($s);
+  @include yek-size($t, $_size);
+}
+@mixin yek-fab($s: "custom", $r: 1) {
+  $_size: _yek-btn--size($s) * $r;
+  @include yek-size($_size, $_size);
+}
+@mixin bx-variant($e, $c) {
+  &--#{$e} {
+    background-color: $c;
+    box-shadow: -50px 50px 20px rgba($c, 0.5); // blur: 20px
+    &::before {
+      background-color: lighten($c, 7);
+    }
+    &::after {
+      background-color: lighten($c, 14);
+    }
+  }
+}
+
+/* resets
+---------------------------- */
+
+body {
+  @include yek-aligns;
+  background-color: $body-bg;
+}
+
+a {
+  color: $yek-blue--600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* stylesheets
+---------------------------- */
+.yek-social {
+  @include yek-size(1000px, 190px); // 750px : eloignement entre les boutons ; 190px : espace entre le bloc du dessus et les boutons
+
+  &__list,
+  &__item,
+  &__link,
+  &__button {
+    @include yek-flex;
+    @include yek-align;
+  }
+  &__list,
+  &__link {
+    @include yek-size(100%, 80px);
+  }
+
+  &__list {
+    @include yek-align(space-between);
+    border-radius: 9px;
+    padding: 9px;
+  }
+
+  &__item {
+    @include yek-size(24%, 50%);
+    border-radius: 9px;
+    background-color: #888;
+  }
+
+  // link style
+  &__button {
+    @include yek-fab;
+    &.button_1 {
+      background-color: $bx-bg-color-1;
+    }
+    &.button_2 {
+      background-color: $bx-bg-color-2;
+    }
+    box-shadow: $bx-shadow;
+    transition: 0.5s 0.15s;
+  }
+
+  // box style
+  &__button {
+    position: relative;
+    transform: $bx-transform--target;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+    }
+
+    &.button_1 {
+      &::before {
+        background-color: darken($bx-bg-color-1, 14);
+      }
+      &::after {
+        background-color: darken($bx-bg-color-1, 7);
+      }
+    }
+    &.button_2 {
+      &::before {
+        background-color: darken($bx-bg-color-2, 14);
+      }
+      &::after {
+        background-color: darken($bx-bg-color-2, 7);
+      }
+    }
+    &::before {
+      @include yek-size(21px, 100%);
+      top: 10px;
+      left: -20px;
+      // background-color: darken($bx-color--side, 7);
+      transition: 0.5s 0.15s;
+      transform: $bx-transform--before;
+    }
+
+    &::after {
+      @include yek-size(100%, $h: 21px);
+      bottom: -20px;
+      left: -10px;
+      transition: 0.8s 0.15s;
+      // background-color: lighten($bx-color--side, 7);
+      transform: $bx-transform--after;
+    }
+  }
+
+  &__icon {
+    color: $yek-gray--800;
+    font-size: 1.7em;
+    transition-delay: 0.2s;
+  }
+
+  /* animations
+  ------------------------- */
+  &__link:hover &__icon {
+    color: $yek-light;
+  }
+
+  &__link:hover &__button {
+    @include bx-variant("button_1", $COLOR_YOUTUBE);
+    @include bx-variant("button_2", $COLOR_TWITTER);
+    transform: $bx-transform-target--hover;
+  }
+}
+
+
+
+

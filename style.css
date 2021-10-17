@@ -6,6 +6,9 @@
 ------------------------- */
 /* resets
 ---------------------------- */
+@import url(node_modules/tailwindcss/dist/base.min.css);
+@import url(node_modules/tailwindcss/dist/components.min.css);
+@import url(node_modules/tailwindcss/dist/tailwind.min.css);
 body {
   align-items: center;
   justify-content: center;
@@ -20,46 +23,56 @@ a {
 /* stylesheets
 ---------------------------- */
 .yek-social {
-  width: 750px;
+  width: 1000px;
   height: 190px;
-  /* animaitons
-	------------------------- */ }
+  /* animations
+  ------------------------- */ }
   .yek-social__list, .yek-social__item, .yek-social__link, .yek-social__button {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center; }
   .yek-social__list, .yek-social__link {
     width: 100%;
-    height: 100%; }
+    height: 80px; }
   .yek-social__list {
     justify-content: space-between;
     border-radius: 9px;
     padding: 9px; }
   .yek-social__item {
     width: 24%;
-    height: 100%;
+    height: 50%;
     border-radius: 9px;
     background-color: #888; }
   .yek-social__button {
-    width: 72px;
-    height: 72px;
-    background-color: #fff;
+    width: 200px;
+    height: 200px;
     box-shadow: -20px 20px 5px rgba(68, 68, 68, 0.5);
     transition: 0.5s 0.15s; }
+    .yek-social__button.button_1 {
+      background-color: red; }
+    .yek-social__button.button_2 {
+      background-color: blue; }
   .yek-social__button {
     position: relative;
     transform: perspective(1000px) rotate(0deg) skew(0deg); }
     .yek-social__button::before, .yek-social__button::after {
       content: "";
       position: absolute; }
+    .yek-social__button.button_1::before {
+      background-color: #b80000; }
+    .yek-social__button.button_1::after {
+      background-color: #db0000; }
+    .yek-social__button.button_2::before {
+      background-color: #0000b8; }
+    .yek-social__button.button_2::after {
+      background-color: #0000db; }
     .yek-social__button::before {
       width: 21px;
       height: 100%;
       top: 10px;
       left: -20px;
-      background-color: #9f9f9f;
       transition: 0.5s 0.15s;
       transform: rotate(0deg) skewY(-45deg); }
     .yek-social__button::after {
@@ -68,7 +81,6 @@ a {
       bottom: -20px;
       left: -10px;
       transition: 0.8s 0.15s;
-      background-color: #c3c3c3;
       transform: rotate(0deg) skewX(-45deg); }
   .yek-social__icon {
     color: #444;
@@ -77,52 +89,24 @@ a {
   .yek-social__link:hover .yek-social__icon {
     color: #fff; }
   .yek-social__link:hover .yek-social__button {
-    transform: perspective(1000px) rotate(0deg) skew(0deg) translate(20px, -20px); }
-    .yek-social__link:hover .yek-social__button--youtube {
+    transform: perspective(1000px) rotate(0deg) skew(0deg) translate(5px, -5px); }
+    .yek-social__link:hover .yek-social__button--button_1 {
       background-color: #c4302b;
       box-shadow: -50px 50px 20px rgba(196, 48, 43, 0.5); }
-      .yek-social__link:hover .yek-social__button--youtube::before {
+      .yek-social__link:hover .yek-social__button--button_1::before {
         background-color: #d5433e; }
-      .yek-social__link:hover .yek-social__button--youtube::after {
+      .yek-social__link:hover .yek-social__button--button_1::after {
         background-color: #db5f5b; }
-    .yek-social__link:hover .yek-social__button--twitter {
+    .yek-social__link:hover .yek-social__button--button_2 {
       background-color: #00acee;
       box-shadow: -50px 50px 20px rgba(0, 172, 238, 0.5); }
-      .yek-social__link:hover .yek-social__button--twitter::before {
+      .yek-social__link:hover .yek-social__button--button_2::before {
         background-color: #13bdff; }
-      .yek-social__link:hover .yek-social__button--twitter::after {
+      .yek-social__link:hover .yek-social__button--button_2::after {
         background-color: #36c7ff; }
-    .yek-social__link:hover .yek-social__button--telegram {
-      background-color: #0088cc;
-      box-shadow: -50px 50px 20px rgba(0, 136, 204, 0.5); }
-      .yek-social__link:hover .yek-social__button--telegram::before {
-        background-color: #00a0f0; }
-      .yek-social__link:hover .yek-social__button--telegram::after {
-        background-color: #14b1ff; }
-    .yek-social__link:hover .yek-social__button--instagram {
-      background-color: #c13584;
-      box-shadow: -50px 50px 20px rgba(193, 53, 132, 0.5); }
-      .yek-social__link:hover .yek-social__button--instagram::before {
-        background-color: #ce4c95; }
-      .yek-social__link:hover .yek-social__button--instagram::after {
-        background-color: #d668a6; }
 
-.follow-me {
-  display: inline-block;
-  position: fixed;
-  bottom: 14px;
-  left: 14px;
-  padding: 9px;
-  border-radius: 9px;
-  font-family: "ubuntu";
-  background-color: #fff; }
-  .follow-me .link {
-    transition: 0.3s 0.2s linear;
-    border-radius: 4px;
-    padding: 4px; }
-    .follow-me .link:hover {
-      margin: 4px;
-      color: #fff;
-      background-color: #69c; }
-  .follow-me .mute {
-    color: black; }
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', sans-serif; }
+
+p, span, a, li {
+  font-family: 'Raleway', sans-serif; }
