@@ -4,24 +4,12 @@
 ---------------------------- */
 /* 3D-BOX ($bx-)
 ------------------------- */
-/* resets
+/* stylesheets
 ---------------------------- */
 @import url(node_modules/tailwindcss/dist/base.min.css);
 @import url(node_modules/tailwindcss/dist/components.min.css);
 @import url(node_modules/tailwindcss/dist/tailwind.min.css);
-body {
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  background-color: #888; }
-
-a {
-  color: #69c;
-  text-decoration: none;
-  cursor: pointer; }
-
-/* stylesheets
----------------------------- */
+@import url(node_modules/tailwindcss/dist/utilities.min.css);
 .yek-social {
   width: 1000px;
   height: 190px;

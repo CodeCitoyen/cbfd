@@ -67,9 +67,6 @@ $COLOR_TWITTER: #00acee;
 $COLOR_TELEGRAM: #0088cc;
 $COLOR_INSTAGRAM: #c13584;
 
-// color
-$body-bg: #888;
-
 /* 3D-BOX ($bx-)
 ------------------------- */
 $bx-bg-color-1: red;
@@ -107,19 +104,6 @@ $bx-transform-target--hover: $bx-transform--target translate(5px, -5px);
   }
 }
 
-/* resets
----------------------------- */
-
-body {
-  @include yek-aligns;
-  background-color: $body-bg;
-}
-
-a {
-  color: $yek-blue--600;
-  text-decoration: none;
-  cursor: pointer;
-}
 
 /* stylesheets
 ---------------------------- */
