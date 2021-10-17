@@ -62,15 +62,13 @@ $yek-blue--600: #69c;
 
 /* variables
 ---------------------------- */
-$COLOR_YOUTUBE: #c4302b;
-$COLOR_TWITTER: #00acee;
-$COLOR_TELEGRAM: #0088cc;
-$COLOR_INSTAGRAM: #c13584;
+$COLOR_PRIMARY: #cb6ce6;
+$COLOR_SECONDARY: #c7d0d8;
 
 /* 3D-BOX ($bx-)
 ------------------------- */
-$bx-bg-color-1: red;
-$bx-bg-color-2: blue;
+$bx-bg-color-1: darken($COLOR_PRIMARY, 10);
+$bx-bg-color-2: darken($COLOR_SECONDARY, 10);
 $bx-shadow: -20px 20px 5px rgba($yek-gray--800, 0.5);
 $bx-skew--before: skewY(-45deg);
 $bx-skew--after: skewX(-45deg);
@@ -87,14 +85,11 @@ $bx-transform-target--hover: $bx-transform--target translate(5px, -5px);
   $_size: _yek-btn--size($s);
   @include yek-size($t, $_size);
 }
-@mixin yek-fab($s: "custom", $r: 1) {
-  $_size: _yek-btn--size($s) * $r;
-  @include yek-size($_size, $_size);
-}
+
 @mixin bx-variant($e, $c) {
   &--#{$e} {
     background-color: $c;
-    box-shadow: -50px 50px 20px rgba($c, 0.5); // blur: 20px
+    box-shadow: -50px 50px 20px rgba($yek-gray--800, 0.5); // blur: 20px
     &::before {
       background-color: lighten($c, 7);
     }
@@ -136,11 +131,14 @@ $bx-transform-target--hover: $bx-transform--target translate(5px, -5px);
 
   // link style
   &__button {
-    @include yek-fab;
+    text-align: center;
+    font-size: 22px;
     &.button_1 {
+      @include yek-size(450px, 100%);
       background-color: $bx-bg-color-1;
     }
     &.button_2 {
+      @include yek-size(300px, 100%);
       background-color: $bx-bg-color-2;
     }
     box-shadow: $bx-shadow;
@@ -151,6 +149,8 @@ $bx-transform-target--hover: $bx-transform--target translate(5px, -5px);
   &__button {
     position: relative;
     transform: $bx-transform--target;
+    color: white;
+    font-weight: bold;
 
     &::before,
     &::after {
@@ -193,21 +193,12 @@ $bx-transform-target--hover: $bx-transform--target translate(5px, -5px);
     }
   }
 
-  &__icon {
-    color: $yek-gray--800;
-    font-size: 1.7em;
-    transition-delay: 0.2s;
-  }
 
   /* animations
   ------------------------- */
-  &__link:hover &__icon {
-    color: $yek-light;
-  }
-
   &__link:hover &__button {
-    @include bx-variant("button_1", $COLOR_YOUTUBE);
-    @include bx-variant("button_2", $COLOR_TWITTER);
+    @include bx-variant("button_1", $COLOR_PRIMARY);
+    @include bx-variant("button_2", $COLOR_SECONDARY);
     transform: $bx-transform-target--hover;
   }
 }

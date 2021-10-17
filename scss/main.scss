@@ -1,16 +1,14 @@
 @import "lib.scss";
 @import "bandeau.scss";
-@import "node_modules/tailwindcss/dist/base.min.css";
-@import "node_modules/tailwindcss/dist/components.min.css";
-@import "node_modules/tailwindcss/dist/tailwind.min.css";
-@import "node_modules/tailwindcss/dist/utilities.min.css";
+@import "node_modules/tailwindcss/dist/base.min";
+@import "node_modules/tailwindcss/dist/utilities.min";
 
 //init
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Raleway', sans-serif;
 }
 
-p, span, a, li {
+p, span, a, li, button {
 	font-family: 'Raleway', sans-serif;
 }
 
