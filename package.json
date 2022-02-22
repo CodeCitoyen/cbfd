@@ -2,13 +2,10 @@
   "name": "clickbaitpourlademocratie",
   "version": "1.0.0",
   "description": "",
-  "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "node-sass scss/main.scss docs/assets/style.css",
     "build": "webpack",
     "build-prod": "webpack --no-watch",
-    "serve": "http-server"
+    "serve": "http-server ./docs"
   },
   "repository": {
     "type": "git",
@@ -20,18 +17,18 @@
     "url": "https://github.com/CodeCitoyen/cbfd/issues"
   },
   "homepage": "https://github.com/CodeCitoyen/cbfd#readme",
-  "dependencies": {
-    "file-include-webpack-plugin": "^1.3.9",
-    "html-loader": "^1.3.2",
-    "html-webpack-plugin": "^4.5.1",
-    "node-sass": "^6.0.1",
-    "tailwindcss": "^2.2.17",
+  "devDependencies": {
+    "webpack-cli": "^4.3.1",
     "webpack": "^5.15.0",
     "css-loader": "^5.0.1",
     "file-loader": "^6.2.0",
-    "mini-css-extract-plugin": "^1.3.4"
-  },
-  "devDependencies": {
-    "webpack-cli": "^4.3.1"
+    "node-sass": "^6.0.1",
+    "mini-css-extract-plugin": "^1.3.4",
+    "sass-loader": "^12.6.0",
+    "file-include-webpack-plugin": "^1.3.9",
+    "html-loader": "^1.3.2",
+    "html-webpack-plugin": "^4.5.1",
+    "tailwindcss": "^2.2.17",
+    "http-server": "^14.1.0"
   }
 }

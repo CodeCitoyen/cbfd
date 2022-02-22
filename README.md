@@ -1,21 +1,36 @@
 # Clickbait pour la démocratie
 
+Un projet créé pendant la nuit du code citoyen 2021. 
 
-Compile scss to css
+- [https://nuitcodecitoyen.org/cbfd/mammouth.html](https://nuitcodecitoyen.org/cbfd/mammouth.html)
+- [https://nuitcodecitoyen.org/cbfd/bezos.html](https://nuitcodecitoyen.org/cbfd/bezos.html)
+- [https://nuitcodecitoyen.org/cbfd/hocket.html](https://nuitcodecitoyen.org/cbfd/hocket.html)
+
+[Plus d'info sur le projet]("https://hackmd.io/0UZ6CKdKR6qi-IvnFc-C5A")
+
+## Install
 
 ```
-npm run sass
+yarn 
+```
+
+## For production
+
+```
+yarn build
 ```
 
 
-Compile compile common html
+## Serve locally
 
 ```
-npm run build
+yarn serve
 ```
 
+### websites are served here :
+
+- [mammouth]("http://localhost:8080/mammouth.html")
+- [bezos]("http://localhost:8080/bezos.html")
+- [hocket]("http://localhost:8080/hocket.html")
 
 
-Todo : 
-
-fix compilation of images & use webpack to compile scss to css

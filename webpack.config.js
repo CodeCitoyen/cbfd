@@ -3,27 +3,27 @@ const FileIncludeWebpackPlugin = require('file-include-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry: './script.js',
     output: {
         filename: 'script.js',
         path: path.resolve(__dirname, 'docs'),
     },
-    // module: { // not working...
-    //     rules: [
-    //         {
-    //             test: /\.css$/,
-    //             use: [MiniCssExtractPlugin.loader, 'css-loader'],
-    //         },
-    //         {
-    //             test: /\.(png|jpe?g|gif)$/i,
-    //             loader: 'file-loader',
-    //             options: {
-    //                 name: '[path][name].[ext]',
-    //             }
-    //         },
-    //     ]
-    // },
+    module: {
+        rules: [
+            {
+                test: /\.scss?$/,
+                use: [MiniCssExtractPlugin.loader,'css-loader', 'sass-loader'],
+            },
+            {
+                test: /\.(png|jpe?g|gif|webp|ico)$/i,
+                loader: 'file-loader',
+                options: {
+                    name: '[path][name].[ext]',
+                }
+            },
+        ]
+    },
     plugins: [
         new FileIncludeWebpackPlugin({
             source: './pages',
@@ -32,5 +32,6 @@ module.exports = {
                 to: 'v=1.0.0',
             }],
         }),
+        new MiniCssExtractPlugin(),
     ],
 };

@@ -12,5 +12,12 @@ p, span, a, li, button {
 	font-family: 'Raleway', sans-serif;
 }
 
+.link {
+	color: #bc40df;
+}
 
-
+@media (min-width:768px) {
+	.md\:h-half-screen {
+		height: 50vh;
+	}
+}

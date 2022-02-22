@@ -1,3 +1,7 @@
+// webpack needs this
+import "./scss/main.scss";
+require.context('./images/', false, /\.(png|jpe?g|svg|webp|ico)$/)
+
 // Set the date we're counting down to
 const countDownDate = new Date("Mar 5, 2022 00:00:00").getTime();
 
